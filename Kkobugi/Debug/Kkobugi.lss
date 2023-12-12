@@ -1,0 +1,457 @@
+
+Kkobugi.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000001c  00800100  00000292  00000306  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000292  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000322  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000354  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000050  00000000  00000000  00000390  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000b21  00000000  00000000  000003e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000094a  00000000  00000000  00000f01  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000438  00000000  00000000  0000184b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000074  00000000  00000000  00001c84  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000004a6  00000000  00000000  00001cf8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000185  00000000  00000000  0000219e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000078  00000000  00000000  00002323  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
+   2:	00 00       	nop
+   4:	58 c0       	rjmp	.+176    	; 0xb6 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	56 c0       	rjmp	.+172    	; 0xb6 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	54 c0       	rjmp	.+168    	; 0xb6 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	52 c0       	rjmp	.+164    	; 0xb6 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	50 c0       	rjmp	.+160    	; 0xb6 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	4e c0       	rjmp	.+156    	; 0xb6 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	4c c0       	rjmp	.+152    	; 0xb6 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	4a c0       	rjmp	.+148    	; 0xb6 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	48 c0       	rjmp	.+144    	; 0xb6 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	46 c0       	rjmp	.+140    	; 0xb6 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	44 c0       	rjmp	.+136    	; 0xb6 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	42 c0       	rjmp	.+132    	; 0xb6 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	40 c0       	rjmp	.+128    	; 0xb6 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	3e c0       	rjmp	.+124    	; 0xb6 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	3c c0       	rjmp	.+120    	; 0xb6 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	3a c0       	rjmp	.+116    	; 0xb6 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	38 c0       	rjmp	.+112    	; 0xb6 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	36 c0       	rjmp	.+108    	; 0xb6 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	34 c0       	rjmp	.+104    	; 0xb6 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	32 c0       	rjmp	.+100    	; 0xb6 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	30 c0       	rjmp	.+96     	; 0xb6 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	2e c0       	rjmp	.+92     	; 0xb6 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	2c c0       	rjmp	.+88     	; 0xb6 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	2a c0       	rjmp	.+84     	; 0xb6 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	28 c0       	rjmp	.+80     	; 0xb6 <__bad_interrupt>
+  66:	00 00       	nop
+  68:	26 c0       	rjmp	.+76     	; 0xb6 <__bad_interrupt>
+  6a:	00 00       	nop
+  6c:	24 c0       	rjmp	.+72     	; 0xb6 <__bad_interrupt>
+  6e:	00 00       	nop
+  70:	22 c0       	rjmp	.+68     	; 0xb6 <__bad_interrupt>
+  72:	00 00       	nop
+  74:	20 c0       	rjmp	.+64     	; 0xb6 <__bad_interrupt>
+  76:	00 00       	nop
+  78:	1e c0       	rjmp	.+60     	; 0xb6 <__bad_interrupt>
+  7a:	00 00       	nop
+  7c:	1c c0       	rjmp	.+56     	; 0xb6 <__bad_interrupt>
+  7e:	00 00       	nop
+  80:	1a c0       	rjmp	.+52     	; 0xb6 <__bad_interrupt>
+  82:	00 00       	nop
+  84:	18 c0       	rjmp	.+48     	; 0xb6 <__bad_interrupt>
+  86:	00 00       	nop
+  88:	16 c0       	rjmp	.+44     	; 0xb6 <__bad_interrupt>
+	...
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e2 e9       	ldi	r30, 0x92	; 146
+  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	ac 31       	cpi	r26, 0x1C	; 28
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	02 d0       	rcall	.+4      	; 0xb8 <main>
+  b4:	ec c0       	rjmp	.+472    	; 0x28e <_exit>
+
+000000b6 <__bad_interrupt>:
+  b6:	a4 cf       	rjmp	.-184    	; 0x0 <__vectors>
+
+000000b8 <main>:
+// STEPPER
+#include "step_motor.h"
+
+int main(void)
+{
+	STEPPER_init();
+  b8:	09 d0       	rcall	.+18     	; 0xcc <STEPPER_init>
+	
+	// ÇÑ ¹ÙÄû 513
+	while (1) {
+		
+	STEPPER_rotate(RIGHT, +513);
+  ba:	61 e0       	ldi	r22, 0x01	; 1
+  bc:	72 e0       	ldi	r23, 0x02	; 2
+  be:	81 e0       	ldi	r24, 0x01	; 1
+  c0:	08 d0       	rcall	.+16     	; 0xd2 <STEPPER_rotate>
+	STEPPER_rotate(LEFT, +513);
+  c2:	61 e0       	ldi	r22, 0x01	; 1
+  c4:	72 e0       	ldi	r23, 0x02	; 2
+  c6:	80 e0       	ldi	r24, 0x00	; 0
+  c8:	04 d0       	rcall	.+8      	; 0xd2 <STEPPER_rotate>
+  ca:	f7 cf       	rjmp	.-18     	; 0xba <main+0x2>
+
+000000cc <STEPPER_init>:
+
+void STEPPER_init() {
+	STEPPER_DDR = 0xFF;
+}
+
+void STEPPER_cleanup() {
+  cc:	8f ef       	ldi	r24, 0xFF	; 255
+  ce:	81 bb       	out	0x11, r24	; 17
+  d0:	08 95       	ret
+
+000000d2 <STEPPER_rotate>:
+}
+
+void STEPPER_rotate(enum STEPPER_TYPE type, int steps) {
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+	stepper_t* stepper = type == LEFT ? &stepper_left : &stepper_right;
+  d6:	81 11       	cpse	r24, r1
+  d8:	03 c0       	rjmp	.+6      	; 0xe0 <STEPPER_rotate+0xe>
+  da:	ec e0       	ldi	r30, 0x0C	; 12
+  dc:	f1 e0       	ldi	r31, 0x01	; 1
+  de:	02 c0       	rjmp	.+4      	; 0xe4 <STEPPER_rotate+0x12>
+  e0:	e0 e0       	ldi	r30, 0x00	; 0
+  e2:	f1 e0       	ldi	r31, 0x01	; 1
+	
+	// FullStep
+	if (steps > 0) { // CLOCKWISE
+  e4:	16 16       	cp	r1, r22
+  e6:	17 06       	cpc	r1, r23
+  e8:	0c f4       	brge	.+2      	; 0xec <STEPPER_rotate+0x1a>
+  ea:	63 c0       	rjmp	.+198    	; 0x1b2 <STEPPER_rotate+0xe0>
+  ec:	a0 e0       	ldi	r26, 0x00	; 0
+  ee:	b0 e0       	ldi	r27, 0x00	; 0
+  f0:	c4 c0       	rjmp	.+392    	; 0x27a <STEPPER_rotate+0x1a8>
+		for (int i = 0; i < steps; i++) {
+			for (int j = 0; j < 4; j++) {
+				STEPPER_PORT = 0x00;
+  f2:	12 ba       	out	0x12, r1	; 18
+				
+				if (full_pattern[j%4] & 0x8) STEPPER_PORT |= (1 << stepper->pin[0]);
+  f4:	ca 01       	movw	r24, r20
+  f6:	83 70       	andi	r24, 0x03	; 3
+  f8:	90 78       	andi	r25, 0x80	; 128
+  fa:	99 23       	and	r25, r25
+  fc:	24 f4       	brge	.+8      	; 0x106 <STEPPER_rotate+0x34>
+  fe:	01 97       	sbiw	r24, 0x01	; 1
+ 100:	8c 6f       	ori	r24, 0xFC	; 252
+ 102:	9f 6f       	ori	r25, 0xFF	; 255
+ 104:	01 96       	adiw	r24, 0x01	; 1
+ 106:	9c 01       	movw	r18, r24
+ 108:	ec 01       	movw	r28, r24
+ 10a:	c8 5e       	subi	r28, 0xE8	; 232
+ 10c:	de 4f       	sbci	r29, 0xFE	; 254
+ 10e:	88 81       	ld	r24, Y
+ 110:	83 ff       	sbrs	r24, 3
+ 112:	0b c0       	rjmp	.+22     	; 0x12a <STEPPER_rotate+0x58>
+ 114:	c2 b3       	in	r28, 0x12	; 18
+ 116:	81 e0       	ldi	r24, 0x01	; 1
+ 118:	90 e0       	ldi	r25, 0x00	; 0
+ 11a:	00 80       	ld	r0, Z
+ 11c:	02 c0       	rjmp	.+4      	; 0x122 <STEPPER_rotate+0x50>
+ 11e:	88 0f       	add	r24, r24
+ 120:	99 1f       	adc	r25, r25
+ 122:	0a 94       	dec	r0
+ 124:	e2 f7       	brpl	.-8      	; 0x11e <STEPPER_rotate+0x4c>
+ 126:	8c 2b       	or	r24, r28
+ 128:	82 bb       	out	0x12, r24	; 18
+				if (full_pattern[j%4] & 0x4) STEPPER_PORT |= (1 << stepper->pin[1]);
+ 12a:	e9 01       	movw	r28, r18
+ 12c:	c8 5e       	subi	r28, 0xE8	; 232
+ 12e:	de 4f       	sbci	r29, 0xFE	; 254
+ 130:	88 81       	ld	r24, Y
+ 132:	82 ff       	sbrs	r24, 2
+ 134:	0b c0       	rjmp	.+22     	; 0x14c <STEPPER_rotate+0x7a>
+ 136:	c2 b3       	in	r28, 0x12	; 18
+ 138:	81 e0       	ldi	r24, 0x01	; 1
+ 13a:	90 e0       	ldi	r25, 0x00	; 0
+ 13c:	02 80       	ldd	r0, Z+2	; 0x02
+ 13e:	02 c0       	rjmp	.+4      	; 0x144 <STEPPER_rotate+0x72>
+ 140:	88 0f       	add	r24, r24
+ 142:	99 1f       	adc	r25, r25
+ 144:	0a 94       	dec	r0
+ 146:	e2 f7       	brpl	.-8      	; 0x140 <STEPPER_rotate+0x6e>
+ 148:	8c 2b       	or	r24, r28
+ 14a:	82 bb       	out	0x12, r24	; 18
+				if (full_pattern[j%4] & 0x2) STEPPER_PORT |= (1 << stepper->pin[2]);
+ 14c:	e9 01       	movw	r28, r18
+ 14e:	c8 5e       	subi	r28, 0xE8	; 232
+ 150:	de 4f       	sbci	r29, 0xFE	; 254
+ 152:	88 81       	ld	r24, Y
+ 154:	81 ff       	sbrs	r24, 1
+ 156:	0b c0       	rjmp	.+22     	; 0x16e <STEPPER_rotate+0x9c>
+ 158:	c2 b3       	in	r28, 0x12	; 18
+ 15a:	81 e0       	ldi	r24, 0x01	; 1
+ 15c:	90 e0       	ldi	r25, 0x00	; 0
+ 15e:	04 80       	ldd	r0, Z+4	; 0x04
+ 160:	02 c0       	rjmp	.+4      	; 0x166 <STEPPER_rotate+0x94>
+ 162:	88 0f       	add	r24, r24
+ 164:	99 1f       	adc	r25, r25
+ 166:	0a 94       	dec	r0
+ 168:	e2 f7       	brpl	.-8      	; 0x162 <STEPPER_rotate+0x90>
+ 16a:	8c 2b       	or	r24, r28
+ 16c:	82 bb       	out	0x12, r24	; 18
+				if (full_pattern[j%4] & 0x1) STEPPER_PORT |= (1 << stepper->pin[3]);
+ 16e:	e9 01       	movw	r28, r18
+ 170:	c8 5e       	subi	r28, 0xE8	; 232
+ 172:	de 4f       	sbci	r29, 0xFE	; 254
+ 174:	88 81       	ld	r24, Y
+ 176:	80 ff       	sbrs	r24, 0
+ 178:	0b c0       	rjmp	.+22     	; 0x190 <STEPPER_rotate+0xbe>
+ 17a:	22 b3       	in	r18, 0x12	; 18
+ 17c:	81 e0       	ldi	r24, 0x01	; 1
+ 17e:	90 e0       	ldi	r25, 0x00	; 0
+ 180:	06 80       	ldd	r0, Z+6	; 0x06
+ 182:	02 c0       	rjmp	.+4      	; 0x188 <STEPPER_rotate+0xb6>
+ 184:	88 0f       	add	r24, r24
+ 186:	99 1f       	adc	r25, r25
+ 188:	0a 94       	dec	r0
+ 18a:	e2 f7       	brpl	.-8      	; 0x184 <STEPPER_rotate+0xb2>
+ 18c:	82 2b       	or	r24, r18
+ 18e:	82 bb       	out	0x12, r24	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 190:	8f e0       	ldi	r24, 0x0F	; 15
+ 192:	97 e2       	ldi	r25, 0x27	; 39
+ 194:	01 97       	sbiw	r24, 0x01	; 1
+ 196:	f1 f7       	brne	.-4      	; 0x194 <STEPPER_rotate+0xc2>
+ 198:	00 c0       	rjmp	.+0      	; 0x19a <STEPPER_rotate+0xc8>
+ 19a:	00 00       	nop
+	stepper_t* stepper = type == LEFT ? &stepper_left : &stepper_right;
+	
+	// FullStep
+	if (steps > 0) { // CLOCKWISE
+		for (int i = 0; i < steps; i++) {
+			for (int j = 0; j < 4; j++) {
+ 19c:	4f 5f       	subi	r20, 0xFF	; 255
+ 19e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1a0:	02 c0       	rjmp	.+4      	; 0x1a6 <STEPPER_rotate+0xd4>
+ 1a2:	40 e0       	ldi	r20, 0x00	; 0
+ 1a4:	50 e0       	ldi	r21, 0x00	; 0
+ 1a6:	44 30       	cpi	r20, 0x04	; 4
+ 1a8:	51 05       	cpc	r21, r1
+ 1aa:	0c f4       	brge	.+2      	; 0x1ae <STEPPER_rotate+0xdc>
+ 1ac:	a2 cf       	rjmp	.-188    	; 0xf2 <STEPPER_rotate+0x20>
+void STEPPER_rotate(enum STEPPER_TYPE type, int steps) {
+	stepper_t* stepper = type == LEFT ? &stepper_left : &stepper_right;
+	
+	// FullStep
+	if (steps > 0) { // CLOCKWISE
+		for (int i = 0; i < steps; i++) {
+ 1ae:	11 96       	adiw	r26, 0x01	; 1
+ 1b0:	02 c0       	rjmp	.+4      	; 0x1b6 <STEPPER_rotate+0xe4>
+ 1b2:	a0 e0       	ldi	r26, 0x00	; 0
+ 1b4:	b0 e0       	ldi	r27, 0x00	; 0
+ 1b6:	a6 17       	cp	r26, r22
+ 1b8:	b7 07       	cpc	r27, r23
+ 1ba:	9c f3       	brlt	.-26     	; 0x1a2 <STEPPER_rotate+0xd0>
+ 1bc:	65 c0       	rjmp	.+202    	; 0x288 <STEPPER_rotate+0x1b6>
+			}
+		}
+	} else {
+		for (int i = 0; i < (-steps); i++) {
+			for (int j = 7; j >= 0; j--) {
+				STEPPER_PORT = 0x00;
+ 1be:	12 ba       	out	0x12, r1	; 18
+				
+				if (full_pattern[j%4] & 0x8) STEPPER_PORT |= (1 << stepper->pin[0]);
+ 1c0:	ca 01       	movw	r24, r20
+ 1c2:	83 70       	andi	r24, 0x03	; 3
+ 1c4:	90 78       	andi	r25, 0x80	; 128
+ 1c6:	99 23       	and	r25, r25
+ 1c8:	24 f4       	brge	.+8      	; 0x1d2 <STEPPER_rotate+0x100>
+ 1ca:	01 97       	sbiw	r24, 0x01	; 1
+ 1cc:	8c 6f       	ori	r24, 0xFC	; 252
+ 1ce:	9f 6f       	ori	r25, 0xFF	; 255
+ 1d0:	01 96       	adiw	r24, 0x01	; 1
+ 1d2:	9c 01       	movw	r18, r24
+ 1d4:	ec 01       	movw	r28, r24
+ 1d6:	c8 5e       	subi	r28, 0xE8	; 232
+ 1d8:	de 4f       	sbci	r29, 0xFE	; 254
+ 1da:	88 81       	ld	r24, Y
+ 1dc:	83 ff       	sbrs	r24, 3
+ 1de:	0b c0       	rjmp	.+22     	; 0x1f6 <STEPPER_rotate+0x124>
+ 1e0:	c2 b3       	in	r28, 0x12	; 18
+ 1e2:	81 e0       	ldi	r24, 0x01	; 1
+ 1e4:	90 e0       	ldi	r25, 0x00	; 0
+ 1e6:	00 80       	ld	r0, Z
+ 1e8:	02 c0       	rjmp	.+4      	; 0x1ee <STEPPER_rotate+0x11c>
+ 1ea:	88 0f       	add	r24, r24
+ 1ec:	99 1f       	adc	r25, r25
+ 1ee:	0a 94       	dec	r0
+ 1f0:	e2 f7       	brpl	.-8      	; 0x1ea <STEPPER_rotate+0x118>
+ 1f2:	8c 2b       	or	r24, r28
+ 1f4:	82 bb       	out	0x12, r24	; 18
+				if (full_pattern[j%4] & 0x4) STEPPER_PORT |= (1 << stepper->pin[1]);
+ 1f6:	e9 01       	movw	r28, r18
+ 1f8:	c8 5e       	subi	r28, 0xE8	; 232
+ 1fa:	de 4f       	sbci	r29, 0xFE	; 254
+ 1fc:	88 81       	ld	r24, Y
+ 1fe:	82 ff       	sbrs	r24, 2
+ 200:	0b c0       	rjmp	.+22     	; 0x218 <STEPPER_rotate+0x146>
+ 202:	c2 b3       	in	r28, 0x12	; 18
+ 204:	81 e0       	ldi	r24, 0x01	; 1
+ 206:	90 e0       	ldi	r25, 0x00	; 0
+ 208:	02 80       	ldd	r0, Z+2	; 0x02
+ 20a:	02 c0       	rjmp	.+4      	; 0x210 <STEPPER_rotate+0x13e>
+ 20c:	88 0f       	add	r24, r24
+ 20e:	99 1f       	adc	r25, r25
+ 210:	0a 94       	dec	r0
+ 212:	e2 f7       	brpl	.-8      	; 0x20c <STEPPER_rotate+0x13a>
+ 214:	8c 2b       	or	r24, r28
+ 216:	82 bb       	out	0x12, r24	; 18
+				if (full_pattern[j%4] & 0x2) STEPPER_PORT |= (1 << stepper->pin[2]);
+ 218:	e9 01       	movw	r28, r18
+ 21a:	c8 5e       	subi	r28, 0xE8	; 232
+ 21c:	de 4f       	sbci	r29, 0xFE	; 254
+ 21e:	88 81       	ld	r24, Y
+ 220:	81 ff       	sbrs	r24, 1
+ 222:	0b c0       	rjmp	.+22     	; 0x23a <STEPPER_rotate+0x168>
+ 224:	c2 b3       	in	r28, 0x12	; 18
+ 226:	81 e0       	ldi	r24, 0x01	; 1
+ 228:	90 e0       	ldi	r25, 0x00	; 0
+ 22a:	04 80       	ldd	r0, Z+4	; 0x04
+ 22c:	02 c0       	rjmp	.+4      	; 0x232 <STEPPER_rotate+0x160>
+ 22e:	88 0f       	add	r24, r24
+ 230:	99 1f       	adc	r25, r25
+ 232:	0a 94       	dec	r0
+ 234:	e2 f7       	brpl	.-8      	; 0x22e <STEPPER_rotate+0x15c>
+ 236:	8c 2b       	or	r24, r28
+ 238:	82 bb       	out	0x12, r24	; 18
+				if (full_pattern[j%4] & 0x1) STEPPER_PORT |= (1 << stepper->pin[3]);
+ 23a:	e9 01       	movw	r28, r18
+ 23c:	c8 5e       	subi	r28, 0xE8	; 232
+ 23e:	de 4f       	sbci	r29, 0xFE	; 254
+ 240:	88 81       	ld	r24, Y
+ 242:	80 ff       	sbrs	r24, 0
+ 244:	0b c0       	rjmp	.+22     	; 0x25c <STEPPER_rotate+0x18a>
+ 246:	22 b3       	in	r18, 0x12	; 18
+ 248:	81 e0       	ldi	r24, 0x01	; 1
+ 24a:	90 e0       	ldi	r25, 0x00	; 0
+ 24c:	06 80       	ldd	r0, Z+6	; 0x06
+ 24e:	02 c0       	rjmp	.+4      	; 0x254 <STEPPER_rotate+0x182>
+ 250:	88 0f       	add	r24, r24
+ 252:	99 1f       	adc	r25, r25
+ 254:	0a 94       	dec	r0
+ 256:	e2 f7       	brpl	.-8      	; 0x250 <STEPPER_rotate+0x17e>
+ 258:	82 2b       	or	r24, r18
+ 25a:	82 bb       	out	0x12, r24	; 18
+ 25c:	8f e0       	ldi	r24, 0x0F	; 15
+ 25e:	97 e2       	ldi	r25, 0x27	; 39
+ 260:	01 97       	sbiw	r24, 0x01	; 1
+ 262:	f1 f7       	brne	.-4      	; 0x260 <STEPPER_rotate+0x18e>
+ 264:	00 c0       	rjmp	.+0      	; 0x266 <STEPPER_rotate+0x194>
+ 266:	00 00       	nop
+				_delay_ms(STEPPER_DELAY);
+			}
+		}
+	} else {
+		for (int i = 0; i < (-steps); i++) {
+			for (int j = 7; j >= 0; j--) {
+ 268:	41 50       	subi	r20, 0x01	; 1
+ 26a:	51 09       	sbc	r21, r1
+ 26c:	02 c0       	rjmp	.+4      	; 0x272 <STEPPER_rotate+0x1a0>
+ 26e:	47 e0       	ldi	r20, 0x07	; 7
+ 270:	50 e0       	ldi	r21, 0x00	; 0
+ 272:	55 23       	and	r21, r21
+ 274:	0c f0       	brlt	.+2      	; 0x278 <STEPPER_rotate+0x1a6>
+ 276:	a3 cf       	rjmp	.-186    	; 0x1be <STEPPER_rotate+0xec>
+				
+				_delay_ms(STEPPER_DELAY);
+			}
+		}
+	} else {
+		for (int i = 0; i < (-steps); i++) {
+ 278:	11 96       	adiw	r26, 0x01	; 1
+ 27a:	88 27       	eor	r24, r24
+ 27c:	99 27       	eor	r25, r25
+ 27e:	86 1b       	sub	r24, r22
+ 280:	97 0b       	sbc	r25, r23
+ 282:	a8 17       	cp	r26, r24
+ 284:	b9 07       	cpc	r27, r25
+ 286:	9c f3       	brlt	.-26     	; 0x26e <STEPPER_rotate+0x19c>
+				
+				_delay_ms(STEPPER_DELAY);
+			}
+		}
+	}
+ 288:	df 91       	pop	r29
+ 28a:	cf 91       	pop	r28
+ 28c:	08 95       	ret
+
+0000028e <_exit>:
+ 28e:	f8 94       	cli
+
+00000290 <__stop_program>:
+ 290:	ff cf       	rjmp	.-2      	; 0x290 <__stop_program>
