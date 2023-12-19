@@ -1,22 +1,21 @@
-﻿#include "kkobugi.h"
-#include "stepper.h"
-#include "servo.h"
+﻿#include <math.h>
+#include "kkobugi.h"
+
+#define TRUE	1
+#define FALSE	0
 
 #define SERVO_ON_DRAWING 0
 #define SERVO_NOT_DRAWING 45
 
-#define CM_TO_STEP_FACTOR_LEFT 1 //이거 바꿔가면서 캘리브레이션
-#define CM_TO_STEP_FACTOR_RIGHT 1 //이거 바꿔가면서 캘리브레이션
-//#define DEGREE_TO_STEP_FACTOR_LEFT 1.425 //이거 바꿔가면서 캘리브레이션
-#define DEGREE_TO_STEP_FACTOR_LEFT 2.7f //이거 바꿔가면서 캘리브레이션
-#define DEGREE_TO_STEP_FACTOR_RIGHT 2.7f //이거 바꿔가면서 캘리브레이션
+// 아래 바꿔가면서 캘리브레이션할 것!
+#define MM_TO_STEP_FACTOR 1
+#define DEGREE_TO_STEP_FACTOR 2.7f
 
-#define DEGREE_BIAS_OUTER	0.1f // 회전 시 바깥쪽 바퀴 편향 정도
+#define mm_to_step(mm) (round((mm) * MM_TO_STEP_FACTOR))
+#define degree_to_step(degree) (round((degree) * DEGREE_TO_STEP_FACTOR))
 
-#define cm_to_step_left(cm) ((cm) * CM_TO_STEP_FACTOR_LEFT)
-#define cm_to_step_right(cm) ((cm) * CM_TO_STEP_FACTOR_RIGHT)
-#define degree_to_step_left(degree) ((degree) * DEGREE_TO_STEP_FACTOR_LEFT)
-#define degree_to_step_right(degree) ((degree) * DEGREE_TO_STEP_FACTOR_RIGHT)
+// 그리고 있을 때 상태를 나타내는 플래그
+int is_drawing = 0;
 
 void KKOBUGI_init() {
 	SERVO_init();
@@ -25,43 +24,46 @@ void KKOBUGI_init() {
 	KKOBUGI_stop_drawing();
 }
 
-// If distance is positive value, then go forward. vice versa.
-// distance unit: cm
+// distance 가 양수이면, 앞으로 이동. vice versa.
+// distance unit: mm
 void KKOBUGI_go(int distance) {
-	STEPPER_step(+cm_to_step_left(distance), +cm_to_step_right(distance));
+	int steps = mm_to_step(distance);
+	STEPPER_step(steps, steps);
 }
 
-void KKOBUGI_turn(int degree) {
-	__KKOBUGI_turn(degree, 0);
-}
-
-void KKOBUGI_turn_with_pause(int degree) {
-	__KKOBUGI_turn(degree, 1);
-}
-
-// If degree is positive value, then turn right. vice versa.
+// degree 가 양수이면, 오른쪽으로 회전. vice versa.
 // degree unit: degree
 void __KKOBUGI_turn(int degree, int pause_drawing) {
-	if (pause_drawing)
-	KKOBUGI_stop_drawing();
+	int draw_again = FALSE;
 	
-	int left_dist = degree_to_step_left(degree);
-	int right_dist = degree_to_step_right(degree);
+	if (pause_drawing && is_drawing) {	
+		KKOBUGI_stop_drawing();
+		draw_again = TRUE;
+	}
 	
-	//if (degree > 0) // turn right => outer wheel is right one
-	//	STEPPER_step(0, DEGREE_BIAS_OUTER);
-	//else if (degree < 0)
-	//	STEPPER_step(DEGREE_BIAS_OUTER, 0);
-	STEPPER_step(+left_dist, -right_dist);
+	int dist = degree_to_step(degree);
+	STEPPER_step(+dist, -dist);
 	
-	if (pause_drawing)
-	KKOBUGI_start_drawing();
+	if (draw_again)
+		KKOBUGI_start_drawing();
+}
+
+// 그리고 있는지와 무관하게 회전한다.
+void KKOBUGI_turn(int degree) {
+	__KKOBUGI_turn(degree, FALSE);
+}
+
+// 그리고 있다면 잠깐 펜을 들고 회전하고, 다시 펜을 내린다.
+void KKOBUGI_turn_with_pause(int degree) {
+	__KKOBUGI_turn(degree, TRUE);
 }
 
 void KKOBUGI_start_drawing() {
+	is_drawing = TRUE;
 	SERVO_rotate(SERVO_ON_DRAWING);
 }
 
 void KKOBUGI_stop_drawing() {
+	is_drawing = FALSE;
 	SERVO_rotate(SERVO_NOT_DRAWING);
 }

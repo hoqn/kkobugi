@@ -1,3 +1,6 @@
+#include "stepper.h"
+#include "servo.h"
+
 void KKOBUGI_init();
 void KKOBUGI_go(int distance);
 void KKOBUGI_turn(int degree);
