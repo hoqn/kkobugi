@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "step_motor.h"
 
-#define STEPPER_DDR		DDRD
-#define STEPPER_PORT	PORTD
-#define STEPPER_PIN		PIND
+#define STEPPER_DDR		DDRE
+#define STEPPER_PORT	PORTE
+#define STEPPER_PIN		PINE
 #define STEPPER_L1		PB1
 #define STEPPER_L2		PB3
 #define STEPPER_L3		PB5
@@ -15,7 +15,7 @@
 #define STEPPER_R4		PB8
 #define STEPPER_DELAY	40
 
-uint8_t full_pattern[4] = {
+unsigned int full_pattern[4] = {
 	0b1100,
 	0b0110,
 	0b0011,

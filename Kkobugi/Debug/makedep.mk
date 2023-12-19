@@ -2,9 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+kkobugi.c
+
 main.c
 
-actor.c
+servo.c
 
-step_motor.c
+stepper.c
 

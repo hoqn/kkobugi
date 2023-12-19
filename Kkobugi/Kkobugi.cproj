@@ -139,16 +139,25 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="kkobugi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kkobugi.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="actor.c">
+    <Compile Include="servo.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="step_motor.c">
+    <Compile Include="servo.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="step_motor.h">
+    <Compile Include="stepper.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="stepper.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

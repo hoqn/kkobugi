@@ -5,7 +5,7 @@
 
 typedef struct {
 	int pin[4];
-	uint8_t pattern[4];
+	unsigned int pattern[4];
 } stepper_t;
 
 enum STEPPER_TYPE {
